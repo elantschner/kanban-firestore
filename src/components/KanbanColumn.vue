@@ -1,5 +1,5 @@
 <template>
-  <draggable class="h-full rounded-lg" :list="list" group="tasks" animation="200">
+  <draggable class="h-full rounded-lg" :list="list" group="tasks" animation="200" :move="checkMove">
     <div
       v-for="el in list"
       :key="el.name"
@@ -27,5 +27,10 @@ export default {
       required: true,
     },
   },
+  methods: {
+    checkMove(evt){
+      console.log(evt.draggedContext.element);
+    }
+  }
 }
 </script>
